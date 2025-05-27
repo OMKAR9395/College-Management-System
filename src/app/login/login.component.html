@@ -1,0 +1,42 @@
+<div class="container vh-100 d-flex justify-content-center align-items-center bg-gradient-primary">
+  <div class="login-card p-4 shadow rounded-4 bg-white" style="max-width: 450px; width: 100%;">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold text-gradient">Welcome</h2>
+      <p class="text-muted">Please Enter Select Your Role And Enter College Facculty</p>
+    </div>
+
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="mb-3">
+        <label class="form-label">User Role</label>
+        <div class="input-group">
+          <span class="input-group-text bg-light"><i class="fas fa-user-tag"></i></span>
+          <select class="form-select" [(ngModel)]="userRole" name="role" required>
+            <option value="" disabled selected>Select Role</option>
+            <option *ngFor="let role of roles">{{ role }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <div class="input-group">
+          <span class="input-group-text bg-light"><i class="fas fa-user"></i></span>
+          <input type="text" class="form-control" [(ngModel)]="username" name="username" required />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <div class="input-group">
+          <span class="input-group-text bg-light"><i class="fas fa-lock"></i></span>
+          <input type="password" class="form-control" [(ngModel)]="password" name="password" required />
+        </div>
+      </div>
+
+      <button class="btn btn-primary w-100 rounded-pill mt-2">Sign In</button>
+    </form>
+
+    <div class="text-center mt-3">
+      <small class="text-muted">Don't have an account? <a href="#">Sign up</a></small>
+    </div>
+  </div>
+</div>

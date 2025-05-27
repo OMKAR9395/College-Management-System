@@ -1,0 +1,38 @@
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+  <div class="mb-2">
+    <label>Student ID</label>
+    <input class="form-control" [(ngModel)]="student.id" name="id" required />
+  </div>
+
+  <div class="mb-2">
+    <label>Date</label>
+    <input class="form-control" type="date" [(ngModel)]="student.date" name="date" required />
+  </div>
+
+  <div class="mb-2">
+    <label>Bank Account</label>
+    <input class="form-control" [(ngModel)]="student.bankAccount" name="bankAccount" />
+  </div>
+
+  <div class="mb-2">
+    <label>Note</label>
+    <input class="form-control" [(ngModel)]="student.note" name="note" />
+  </div>
+
+  <div class="mb-2">
+    <label>Name</label>
+    <input class="form-control" [(ngModel)]="student.name" name="name" required />
+  </div>
+
+  <div class="mb-2">
+    <label>Aadhar No</label>
+    <input class="form-control" [(ngModel)]="student.aadhar" name="aadhar" required maxlength="12" />
+  </div>
+
+  <div class="mb-2">
+    <label>PAN Card No</label>
+    <input class="form-control" [(ngModel)]="student.pan" name="pan" maxlength="10" />
+  </div>
+
+  <button class="btn btn-primary mt-3">Add Student</button>
+</form>

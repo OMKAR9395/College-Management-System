@@ -1,0 +1,56 @@
+<div class="d-flex flex-column vh-100">
+  <!-- Header -->
+  <div class="d-flex align-items-center justify-content-between bg-primary text-white px-4 py-2">
+    <div class="d-flex align-items-center">
+      <img src="assets/logo.png" alt="Logo" width="40" class="me-3" />
+      <h4 class="mb-0">Yashwantrao Chavan College Of Science Karad</h4>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="d-flex flex-grow-1">
+    <!-- Sidebar -->
+    <div class="bg-light border-end p-3" style="min-width: 200px;">
+      <nav class="nav flex-column">
+       <button class="btn btn-outline-primary mx-2" routerLink="/main/student">👨 Student</button>
+       <br>
+        <button class="btn btn-outline-primary mx-2" routerLink="/main/staff">👥 Staff</button>
+      <br>
+       <button class="btn btn-outline-primary mx-2" routerLink="/main/teacher">👨‍🏫 Teacher</button>
+      <br>
+       <button class="btn btn-outline-primary mx-2" routerLink="/main/expense">✒ Expense</button>
+        <a class="nav-link" routerLink="user-management">User Management</a>
+        <a class="nav-link" routerLink="admin">Admin</a>
+        <a class="nav-link" routerLink="sport">Sport</a>
+        <!-- <a class="nav-link text-danger" (click)="logout()">LogOut</a> -->
+         <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#logoutModal">
+  Logout
+</button>
+
+<!-- Logout Confirmation Modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-warning text-dark">
+        <h5 class="modal-title" id="logoutModalLabel">Confirm Logout</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to exit?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-danger" (click)="logout()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-grow-1 p-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
