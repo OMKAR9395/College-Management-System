@@ -40,6 +40,7 @@ export class AddStudentComponent implements OnInit {
   submitForm() {
     if (this.studentForm.valid) {
       this.studentService.addStudent(this.studentForm.value);
+      
       alert('Student added successfully!');
       this.studentForm.reset();
     } else {
