@@ -23,7 +23,7 @@ export class LoginComponent {
 
   login() {
     // Hardcoded check
-    if (this.username === 'admin' && this.password === 'admin123' &&  this.userRole === 'Admin') 
+    if (this.username === 'a' && this.password === 'a' &&  this.userRole === 'Admin') 
     {
      // alert('Login successful!');
      this.router.navigate(['/main']);

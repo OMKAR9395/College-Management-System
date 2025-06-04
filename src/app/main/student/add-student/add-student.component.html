@@ -1,38 +1,75 @@
-<form (ngSubmit)="onSubmit()" #form="ngForm">
-  <div class="mb-2">
-    <label>Student ID</label>
-    <input class="form-control" [(ngModel)]="student.id" name="id" required />
-  </div>
-
-  <div class="mb-2">
-    <label>Date</label>
-    <input class="form-control" type="date" [(ngModel)]="student.date" name="date" required />
-  </div>
-
-  <div class="mb-2">
-    <label>Bank Account</label>
-    <input class="form-control" [(ngModel)]="student.bankAccount" name="bankAccount" />
-  </div>
-
-  <div class="mb-2">
-    <label>Note</label>
-    <input class="form-control" [(ngModel)]="student.note" name="note" />
-  </div>
-
-  <div class="mb-2">
-    <label>Name</label>
-    <input class="form-control" [(ngModel)]="student.name" name="name" required />
-  </div>
-
-  <div class="mb-2">
-    <label>Aadhar No</label>
-    <input class="form-control" [(ngModel)]="student.aadhar" name="aadhar" required maxlength="12" />
-  </div>
-
-  <div class="mb-2">
-    <label>PAN Card No</label>
-    <input class="form-control" [(ngModel)]="student.pan" name="pan" maxlength="10" />
-  </div>
-
-  <button class="btn btn-primary mt-3">Add Student</button>
-</form>
+<div class="container mt-4">
+  <h3 class="text-center mb-4">Add Student</h3>
+  <form [formGroup]="studentForm" (ngSubmit)="submitForm()">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label>Student ID *</label>
+        <input formControlName="studentId" class="form-control">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Full Name *</label>
+        <input formControlName="fullName" class="form-control">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Date of Birth *</label>
+        <input type="date" formControlName="dob" class="form-control">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Gender *</label>
+        <select formControlName="gender" class="form-control">
+          <option value="">Select</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Phone Number *</label>
+        <input formControlName="phone" class="form-control">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Email *</label>
+        <input formControlName="email" class="form-control">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Course *</label>
+        <input formControlName="course" class="form-control">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Bank Account *</label>
+        <input formControlName="bankAccount" class="form-control">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>IFSC Code</label>
+        <input formControlName="ifsc" class="form-control">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>PAN Card</label>
+        <input formControlName="pan" class="form-control">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Aadhar Number *</label>
+        <input formControlName="aadhar" class="form-control">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Address</label>
+        <textarea formControlName="address" class="form-control"></textarea>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Father's Name</label>
+        <input formControlName="fatherName" class="form-control">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Mother's Name</label>
+        <input formControlName="motherName" class="form-control">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Admission Date *</label>
+        <input type="date" formControlName="admissionDate" class="form-control">
+      </div>
+    </div>
+    <div class="text-center mt-3">
+      <button type="submit" class="btn btn-success px-5">Submit</button>
+    </div>
+  </form>
+</div>
