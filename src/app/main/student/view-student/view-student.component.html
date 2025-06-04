@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h3 class="text-center mb-4">All Student Records</h3>
+  <table class="table table-bordered table-hover table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Full Name</th>
+        <th>DOB</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Course</th>
+        <th>Aadhar</th>
+        <th>PAN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of students">
+        <td>{{ s.studentId }}</td>
+        <td>{{ s.fullName }}</td>
+        <td>{{ s.dob }}</td>
+        <td>{{ s.email }}</td>
+        <td>{{ s.phone }}</td>
+        <td>{{ s.course }}</td>
+        <td>{{ s.aadhar }}</td>
+        <td>{{ s.pan }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

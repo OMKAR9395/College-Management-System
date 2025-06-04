@@ -82,7 +82,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+    RouterModule.forChild(routes),
+    StudentComponent,
+    AddStudentComponent,
+    UpdateStudentComponent,
+    DeleteStudentComponent,
+    ViewStudentComponent
+  ],
   exports: [RouterModule]
 })
 export class MainRoutingModule { }
