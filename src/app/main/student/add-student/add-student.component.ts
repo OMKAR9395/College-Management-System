@@ -12,6 +12,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './add-student.component.css'
 })
 export class AddStudentComponent implements OnInit {
+  
   studentForm!: FormGroup;
 
   constructor(private fb: FormBuilder, private studentService: StudentService) {}
