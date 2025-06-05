@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h3 class="text-center mb-4">Add Attendance</h3>
+  <form (ngSubmit)="addAttendance()">
+    <div class="mb-3">
+      <label>Attendance ID</label>
+      <input type="text" class="form-control" [(ngModel)]="attendance.id" name="id" required>
+    </div>
+    <div class="mb-3">
+      <label>Student Name</label>
+      <input type="text" class="form-control" [(ngModel)]="attendance.studentName" name="studentName" required>
+    </div>
+    <div class="mb-3">
+      <label>Date</label>
+      <input type="date" class="form-control" [(ngModel)]="attendance.date" name="date" required>
+    </div>
+    <div class="mb-3">
+      <label>Status</label>
+      <select class="form-control" [(ngModel)]="attendance.status" name="status">
+        <option>Present</option>
+        <option>Absent</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label>Remarks</label>
+      <input type="text" class="form-control" [(ngModel)]="attendance.remarks" name="remarks">
+    </div>
+    <button type="submit" class="btn btn-success">Add Attendance</button>
+  </form>
+</div>

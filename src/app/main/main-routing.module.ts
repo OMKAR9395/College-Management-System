@@ -45,6 +45,11 @@ import { AddUserManagementComponent } from './user-management/add-user-managemen
 import { UpdateUserManagementComponent } from './user-management/update-user-management/update-user-management.component';
 import { DeleteUserManagementComponent } from './user-management/delete-user-management/delete-user-management.component';
 import { ViewUserManagementComponent } from './user-management/view-user-management/view-user-management.component';
+import { AttendanceComponent } from './attendance/attendance.component';
+import { AddAttendanceComponent } from './attendance/add-attendance/add-attendance.component';
+import { UpdateAttendanceComponent } from './attendance/update-attendance/update-attendance.component';
+import { DeleteAttendanceComponent } from './attendance/delete-attendance/delete-attendance.component';
+import { ViewAttendanceComponent } from './attendance/view-attendance/view-attendance.component';
 
 const routes: Routes = [
   { path: '', component: LayoutComponent,
@@ -113,6 +118,17 @@ const routes: Routes = [
       { path: 'update', component: UpdateUserManagementComponent },
       { path: 'delete', component: DeleteUserManagementComponent },
       { path: 'view', component: ViewUserManagementComponent },
+    ]
+  },
+   {
+    path: 'attendance',
+    component: AttendanceComponent,
+    children: [
+      { path: '', redirectTo: 'add', pathMatch: 'full' },
+      { path: 'add', component: AddAttendanceComponent },
+      { path: 'update', component: UpdateAttendanceComponent },
+      { path: 'delete', component: DeleteAttendanceComponent },
+      { path: 'view', component: ViewAttendanceComponent },
     ]
   }
     ]

@@ -1,0 +1,10 @@
+<div class="container mt-4">
+  <h3 class="text-center mb-4">Delete Attendance</h3>
+  <form (ngSubmit)="delete()">
+    <div class="mb-3">
+      <label>Enter Attendance ID</label>
+      <input type="text" class="form-control" [(ngModel)]="attendanceId" name="attendanceId" required>
+    </div>
+    <button type="submit" class="btn btn-danger">Delete Attendance</button>
+  </form>
+</div>
