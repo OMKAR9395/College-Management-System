@@ -13,7 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     MainRoutingModule,
- 
+    ReactiveFormsModule,
+    FormsModule,
   ]
 })
 export class MainModule { }

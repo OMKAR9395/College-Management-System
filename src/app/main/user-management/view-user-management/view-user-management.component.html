@@ -1,0 +1,8 @@
+<div class="container">
+  <h2>User Profile</h2>
+  <div *ngIf="user">
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Role:</strong> {{ user.role }}</p>
+  </div>
+  <button routerLink="/users">Back to Users</button>
+</div>

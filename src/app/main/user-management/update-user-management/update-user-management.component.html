@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Update User</h2>
+  <form *ngIf="user" (submit)="updateUser()">
+    <label>Username:</label>
+    <input type="text" [(ngModel)]="user.username" required />
+
+    <label>Password:</label>
+    <input type="password" [(ngModel)]="user.password" required />
+
+    <label>Role:</label>
+    <select [(ngModel)]="user.role">
+      <option value="Admin">Admin</option>
+      <option value="Staff">Staff</option>
+      <option value="Student">Student</option>
+    </select>
+
+    <button type="submit">Update</button>
+  </form>
+</div>

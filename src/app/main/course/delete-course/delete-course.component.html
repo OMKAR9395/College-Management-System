@@ -1,1 +1,6 @@
-<p>delete-course works!</p>
+<h2>Delete Course</h2>
+<div *ngIf="course">
+  <p>Are you sure you want to delete the course <strong>{{ course.name }}</strong>?</p>
+  <button (click)="deleteCourse()">Yes, Delete</button>
+  <button (click)="cancel()">Cancel</button>
+</div>

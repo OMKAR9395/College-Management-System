@@ -29,16 +29,30 @@ import { AddExpenseComponent } from './expense/add-expense/add-expense.component
 import { UpdateExpenseComponent } from './expense/update-expense/update-expense.component';
 import { DeleteExpenseComponent } from './expense/delete-expense/delete-expense.component';
 import { ViewExpenseComponent } from './expense/view-expense/view-expense.component';
+
+/**Course Module */
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CourseComponent } from './course/course.component';
+import { AddCourseComponent } from './course/add-course/add-course.component';
+import { UpdateCourseComponent } from './course/update-course/update-course.component';
+import { DeleteCourseComponent } from './course/delete-course/delete-course.component';
+import { ViewCourseComponent } from './course/view-course/view-course.component';
+
+/**User Management Module */
+import { UserManagementComponent } from './user-management/user-management.component';
+import { AddUserManagementComponent } from './user-management/add-user-management/add-user-management.component';
+import { UpdateUserManagementComponent } from './user-management/update-user-management/update-user-management.component';
+import { DeleteUserManagementComponent } from './user-management/delete-user-management/delete-user-management.component';
+import { ViewUserManagementComponent } from './user-management/view-user-management/view-user-management.component';
 
 const routes: Routes = [
   { path: '', component: LayoutComponent,
     children: [
       {
-        path: 'student',
-        component: StudentComponent,
-        children: [
+      path: 'student',
+      component: StudentComponent,
+      children: [
                   { path: '', redirectTo: 'add', pathMatch: 'full' },
                   { path: 'add', component: AddStudentComponent },
                   { path: 'update', component: UpdateStudentComponent },
@@ -47,9 +61,9 @@ const routes: Routes = [
         ]
       },
       {
-    path: 'teacher',
-    component: TeacherComponent,
-    children: [
+      path: 'teacher',
+      component: TeacherComponent,
+      children: [
               { path: '', redirectTo: 'add', pathMatch: 'full' },
               { path: 'add', component: AddTeacherComponent },
               { path: 'update', component: UpdateTeacherComponent },
@@ -58,9 +72,9 @@ const routes: Routes = [
       ] 
       },
        {
-    path: 'staff',
-    component: StaffComponent,
-    children: [
+      path: 'staff',
+      component: StaffComponent,
+      children: [
               { path: '', redirectTo: 'add', pathMatch: 'full' },
               { path: 'add', component: AddStaffComponent },
               { path: 'update', component: UpdateStaffComponent },
@@ -69,9 +83,9 @@ const routes: Routes = [
     ]
       },
       {
-    path: 'expense',
-    component: ExpenseComponent,
-    children: [
+      path: 'expense',
+      component: ExpenseComponent,
+      children: [
               { path: '', redirectTo: 'add', pathMatch: 'full' },
               { path: 'add', component: AddExpenseComponent },
               { path: 'update', component: UpdateExpenseComponent },
@@ -79,7 +93,28 @@ const routes: Routes = [
               { path: 'view', component: ViewExpenseComponent }
     ]
       },
-      
+     {
+      path: 'course',
+      component: CourseComponent,
+      children: [
+    { path: '', redirectTo: 'view', pathMatch: 'full' },
+    { path: 'add', component: AddCourseComponent },
+    { path: 'update/:id', component: UpdateCourseComponent },
+    { path: 'delete/:id', component: DeleteCourseComponent },
+    { path: 'view', component: ViewCourseComponent }
+  ]
+},
+ {
+    path: 'user-management',
+    component: UserManagementComponent,
+    children: [
+      { path: '', redirectTo: 'add', pathMatch: 'full' },
+      { path: 'add', component: AddUserManagementComponent },
+      { path: 'update', component: UpdateUserManagementComponent },
+      { path: 'delete', component: DeleteUserManagementComponent },
+      { path: 'view', component: ViewUserManagementComponent },
+    ]
+  }
     ]
   }
 ];
@@ -102,7 +137,13 @@ const routes: Routes = [
     ViewExpenseComponent,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    UserManagementComponent,
+    AddUserManagementComponent,
+    UpdateUserManagementComponent,
+    ViewUserManagementComponent,
+    DeleteUserManagementComponent,
   ],
   exports: [RouterModule]
 })
