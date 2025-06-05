@@ -1,1 +1,10 @@
-<p>delete-expense works!</p>
+<div class="container mt-4">
+  <h3 class="text-center mb-4">Delete Expense</h3>
+  <form #deleteExpenseForm="ngForm" (ngSubmit)="onDelete()">
+    <div class="mb-3">
+      <label>Enter Expense ID</label>
+      <input type="text" class="form-control" [(ngModel)]="expenseId" name="expenseId" required>
+    </div>
+    <button class="btn btn-danger">Delete</button>
+  </form>
+</div>

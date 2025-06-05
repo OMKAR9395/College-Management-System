@@ -29,6 +29,8 @@ import { AddExpenseComponent } from './expense/add-expense/add-expense.component
 import { UpdateExpenseComponent } from './expense/update-expense/update-expense.component';
 import { DeleteExpenseComponent } from './expense/delete-expense/delete-expense.component';
 import { ViewExpenseComponent } from './expense/view-expense/view-expense.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: LayoutComponent,
@@ -67,7 +69,7 @@ const routes: Routes = [
     ]
       },
       {
-    path: 'staff',
+    path: 'expense',
     component: ExpenseComponent,
     children: [
               { path: '', redirectTo: 'add', pathMatch: 'full' },
@@ -76,19 +78,31 @@ const routes: Routes = [
               { path: 'delete', component: DeleteExpenseComponent },
               { path: 'view', component: ViewExpenseComponent }
     ]
-      }
+      },
+      
     ]
   }
 ];
 
 @NgModule({
+  declarations: [
+  ],
   imports: [
     RouterModule.forChild(routes),
     StudentComponent,
     AddStudentComponent,
     UpdateStudentComponent,
     DeleteStudentComponent,
-    ViewStudentComponent
+    ViewStudentComponent,
+
+    ExpenseComponent,
+    AddExpenseComponent,
+    UpdateExpenseComponent,
+    DeleteExpenseComponent,
+    ViewExpenseComponent,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [RouterModule]
 })

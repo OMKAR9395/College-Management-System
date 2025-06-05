@@ -1,1 +1,28 @@
-<p>view-expense works!</p>
+<div class="container mt-4">
+  <h3 class="text-center mb-4">Expense Records</h3>
+  <table class="table table-bordered table-striped" *ngIf="expenses.length > 0; else noData">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Amount</th>
+        <th>Category</th>
+        <th>Date</th>
+        <th>Note</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let exp of expenses">
+        <td>{{ exp.id }}</td>
+        <td>{{ exp.title }}</td>
+        <td>{{ exp.amount }}</td>
+        <td>{{ exp.category }}</td>
+        <td>{{ exp.date }}</td>
+        <td>{{ exp.note }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #noData>
+    <p class="text-center text-danger">No expense records found.</p>
+  </ng-template>
+</div>

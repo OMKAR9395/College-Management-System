@@ -1,1 +1,30 @@
-<p>add-expense works!</p>
+<div class="container mt-4">
+  <h3 class="text-center mb-4">Add Expense</h3>
+  <form #addExpenseForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label>Expense ID</label>
+      <input type="text" class="form-control" [(ngModel)]="expense.id" name="id" required>
+    </div>
+    <div class="mb-3">
+      <label>Title</label>
+      <input type="text" class="form-control" [(ngModel)]="expense.title" name="title" required>
+    </div>
+    <div class="mb-3">
+      <label>Amount</label>
+      <input type="number" class="form-control" [(ngModel)]="expense.amount" name="amount" required>
+    </div>
+    <div class="mb-3">
+      <label>Category</label>
+      <input type="text" class="form-control" [(ngModel)]="expense.category" name="category">
+    </div>
+    <div class="mb-3">
+      <label>Date</label>
+      <input type="date" class="form-control" [(ngModel)]="expense.date" name="date">
+    </div>
+    <div class="mb-3">
+      <label>Note</label>
+      <textarea class="form-control" [(ngModel)]="expense.note" name="note"></textarea>
+    </div>
+    <button class="btn btn-success px-4 py-2">Submit</button>
+  </form>
+</div>
