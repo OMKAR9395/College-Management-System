@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../../../services/user.service';
-import { User } from '../user.model';
 
 @Component({
   selector: 'app-update-user-management',
@@ -10,20 +8,24 @@ import { User } from '../user.model';
   templateUrl: './update-user-management.component.html',
   styleUrl: './update-user-management.component.css'
 })
-export class UpdateUserManagementComponent implements OnInit {
- user: User | undefined;
+export class UpdateUserManagementComponent  {
+ userId = '';
+  newEmail = '';
+  newRole = '';
 
-  constructor(private userService: UserService, private route: ActivatedRoute) {}
+  constructor(private userService: UserService) {}
 
-  ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.user = this.userService.getUserById(id);
-  }
-
-  updateUser(): void {
-    if (this.user) {
-      this.userService.updateUser(this.user.id, this.user);
-      alert('User updated successfully!');
-    }
+  updateUser() {
+    // You may want to fetch the existing user details to prefill these fields
+    const updatedUser = {
+      id: this.userId,
+      email: this.newEmail,
+      role: this.newRole,
+      username: '', // Set or fetch the username
+      phone: '',    // Set or fetch the phone
+      address: '',  // Set or fetch the address
+      password: ''  // Set or fetch the password
+    };
+    this.userService.updateUser(this.userId, this.newEmail, this.newRole, updatedUser);
   }
 }

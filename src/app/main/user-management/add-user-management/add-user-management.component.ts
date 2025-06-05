@@ -2,21 +2,36 @@ import { Component } from '@angular/core';
 import { User } from '../user.model';
 import { UserManagementComponent } from '../user-management.component';
 import { UserService } from '../../../services/user.service';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-add-user-management',
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule,ReactiveFormsModule],
   templateUrl: './add-user-management.component.html',
   styleUrl: './add-user-management.component.css'
 })
 export class AddUserManagementComponent {
- newUser: User = { id: 0, username: '', password: '', role: 'Student' };
+ userForm: FormGroup;
 
-  constructor(private userService: UserService) {}
+  constructor(private fb: FormBuilder, private userService: UserService) {
+    this.userForm = this.fb.group({
+      id: ['', Validators.required],
+      username: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      role: ['', Validators.required],
+      phone: ['', Validators.required],
+      address: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
 
-  addUser(): void {
-    this.userService.addUser(this.newUser);
-    alert('User added successfully!');
+  onSubmit() {
+    if (this.userForm.valid) {
+      const user: User = this.userForm.value;
+      this.userService.addUser(user);
+      alert('User added successfully');
+      this.userForm.reset();
+    }
   }
 }

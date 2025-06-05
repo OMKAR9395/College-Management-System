@@ -1,6 +1,9 @@
 export interface User {
-  id: number;
+id: string;
   username: string;
+  email: string;
+  role: string;
+  phone: string;
+  address: string;
   password: string;
-  role: 'Admin' | 'Staff' | 'Student'; // Define roles
 }
