@@ -17,6 +17,7 @@ constructor(private router: Router) {}
     this.router.navigate([`/main/${path}`]);
   }
 
+  
   logout() {
     
   const modalEl = document.getElementById('logoutModal');
@@ -36,7 +37,7 @@ constructor(private router: Router) {}
   localStorage.clear();
 
   // Navigate to login
-  
+
   this.router.navigate(['/login']);
   }
   goToStudent(){
