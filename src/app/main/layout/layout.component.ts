@@ -36,6 +36,7 @@ constructor(private router: Router) {}
   localStorage.clear();
 
   // Navigate to login
+  
   this.router.navigate(['/login']);
   }
   goToStudent(){
