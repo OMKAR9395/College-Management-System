@@ -16,7 +16,6 @@ constructor(private router: Router) {}
   navigate(path: string) {
     this.router.navigate([`/main/${path}`]);
   }
-
   
   logout() {
     
