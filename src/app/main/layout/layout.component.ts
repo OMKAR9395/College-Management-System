@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+
 declare var bootstrap: any;
 
 @Component({
