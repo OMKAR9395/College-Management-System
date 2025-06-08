@@ -9,6 +9,7 @@ declare var bootstrap: any;
   styleUrl: './layout.component.css'
 })
 
+
 export class LayoutComponent {
   
 constructor(private router: Router) {}
